@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a[4][5];
+    int i, j;
+    for(i = 0; i < 4; i++) {
+        for(j = 0; j < 5; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+    int b[4] = { 0 };
+    int k;
+    for(j = 0; j < 5; j++) {
+        for(k = 0; k < 4; k++) {
+            if(b[k] < a[k][j]) {
+                b[k] = a[k][j];
+            }
+        }
+    }
+    int c[5] = {100000000, 100000000, 100000000, 100000000, 100000000};
+    int x;
+    for(i = 0; i < 4; i++) {
+        for(x = 0; x < 5; x++) {
+            if(c[x] > a[i][x]) {
+                c[x] = a[i][x];
+            }
+        }
+    }
+    for(k = 0; k < 4; k++) {
+        printf("%d\n", b[k]);
+    }
+    for(x = 0; x < 5; x++) {
+        printf("%d\n", c[x]);
+    }
+    return 0;
+}
