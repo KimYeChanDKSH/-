@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int money[3]={100, 60, 10};
+    int salary_array[5]={50, 100, 140, 170, 180};
+    int change[3][5];
+    int i, j;
+    int count[5] = { 0 };
+    int count2[5] = { 0 };
+    for(i = 0; i < 5; i++) {
+        for(j = 0; j < 3; j++) {
+            change[j][i] = salary_array[i] / money[j];
+            salary_array[i] = salary_array[i] - change[j][i] * money[j];
+            count[i] += change[j][i];
+        }
+    }
+    for(i = 0; i < 5; i++) {
+        for(j = 0; j < 3; j++) {
+            printf("%5d원 : %d\n", money[j], change[j][i]);
+        }
+        puts("");
+    }
+    return 0;
+}
+
