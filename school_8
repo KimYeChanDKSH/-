@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    struct myGrade {
+        char name[10];
+        int korean;
+        int english;
+        int math;
+    };
+    struct myGrade myClass[3];
+    int student, i, j;
+    for(i = 0; i < 3; i++) {
+        scanf("%s %d %d %d", &myClass[i].name, &myClass[i].korean, &myClass[i].english, &myClass[i].math);
+    }
+    scanf("%d", &j);
+    printf("%s %d %d %d", myClass[j-1].name, myClass[j-1].korean, myClass[j-1].english, myClass[j-1].math);
+    return 0;
+}
