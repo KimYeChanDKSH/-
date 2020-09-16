@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    struct people {
+        int color[5];
+        int height;
+    };
+    struct people korean[3];
+    int i, j;
+    for(i = 0; i < 3; i++) {
+        scanf("%d %d %d %d %d %d", &korean[i].color[0], &korean[i].color[1], &korean[i].color[2], &korean[i].color[3], &korean[i].color[4], &korean[i].height);
+    }
+    scanf("%d", &j);
+    printf("%d %d %d %d %d %d", korean[j-1].color[0], korean[j-1].color[1], korean[j-1].color[2], korean[j-1].color[3], korean[j-1].color[4], korean[j-1].height);
+}
