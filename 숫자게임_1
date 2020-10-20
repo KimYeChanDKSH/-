@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+	int random, a, b, i = 0;
+	srand((unsigned)time(NULL));
+	random = rand()%101;
+	printf("level [ 1 ~ 10 ]\n");
+	scanf("%d", &b);
+	b = 13 - b;
+	while(i < b) {
+		scanf("%d", &a);
+		i++;
+		if(i == b) break;
+		if(a > random) printf("down\n");
+		else if(a < random) printf("up\n");
+		else break;
+	}
+	if(a == random) printf("clear");
+	else printf("fail");
+	return 0;
+}
