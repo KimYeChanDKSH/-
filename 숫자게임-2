@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+	int random, cho, lev, rang, i, j;
+	int hint[3];
+	srand((unsigned)time(NULL));
+	
+	printf("level [ 1 ~ 10 ] >");
+	scanf("%d", &lev);
+	
+	printf("range [ 10 ~ 10000] >");
+	scanf("%d", &rang);
+	
+	for(j = 0; j < 3; j++) {
+		hint[j] = rand() % rang;
+	}
+	j = 0;
+	
+	random = rand() % rang + 1;
+	
+	lev = 13 - lev;
+	
+	printf("start		chance > 0\n");
+	
+	while(i < lev) {
+		scanf("%d", &cho);
+	
+		if(cho == 0) {
+			if(hint[j] > random) printf("%d down\n", hint[j]);
+			if(hint[j] < random) printf("%d up\n", hint[j]);
+			j++;
+			continue;
+		}
+		
+		i++;
+		
+		if(i == lev) break;
+		
+		if(cho > random) printf("down\n");
+		else if(cho < random) printf("up\n");
+		else break;
+	}
+	
+	if(cho == random) printf("clear");
+	else printf("fail");
+	return 0;
+}
